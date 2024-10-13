@@ -5,8 +5,7 @@ class Auto():
         self.tämänhetkinen_nopeus = tämänhetkinen_nopeus
         self.kuljettu_matka = kuljettu_matka
 
-    def accelerate(self, tämänhetkinen_nopeus, velocidad):
-
+    def accelerate(self, velocidad):
 
         self.velocidad = velocidad
         self.tämänhetkinen_nopeus += velocidad
@@ -20,11 +19,11 @@ class Auto():
 
 
     def main(self):
-        self.accelerate(self.tämänhetkinen_nopeus, 30)
-        self.accelerate(self.tämänhetkinen_nopeus, 70)
-        self.accelerate(self.tämänhetkinen_nopeus, 50)
+        self.accelerate(30)
+        self.accelerate(70)
+        self.accelerate(50)
         print(f"Current speed is: {self.tämänhetkinen_nopeus} km/h")
-        self.accelerate(self.tämänhetkinen_nopeus, -200)
+        self.accelerate(-200)
         return f"Final speed is {self.tämänhetkinen_nopeus} km/h"
 
 auto = Auto("ABC123", "142 km/h")

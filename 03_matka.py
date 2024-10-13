@@ -1,11 +1,11 @@
 class Auto():
-    def __init__(self, rekisteritunnus, huippunopeus, tämänhetkinen_nopeus=0, kuljettu_matka=0):
+    def __init__(self, rekisteritunnus, huippunopeus, tämänhetkinen_nopeus, kuljettu_matka):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.tämänhetkinen_nopeus = tämänhetkinen_nopeus
         self.kuljettu_matka = kuljettu_matka
 
-    def accelerate(self, tämänhetkinen_nopeus, velocidad):
+    def accelerate(self, velocidad):
 
         self.velocidad = velocidad
         self.tämänhetkinen_nopeus += velocidad
@@ -16,19 +16,17 @@ class Auto():
         elif self.tämänhetkinen_nopeus < 0:
             self.tämänhetkinen_nopeus = 0
 
-    def drive(self, kuljettu_matka, hours_drived):
+    def drive(self, hours_drived):
         self.hours_drived = hours_drived
-        self.kuljettu_matka = self.hours_drived * self.velocidad
+        self.km_drived = self.hours_drived * self.tämänhetkinen_nopeus
+        self.kuljettu_matka += self.km_drived
 
 
     def main(self):
-        self.accelerate(self.tämänhetkinen_nopeus, 30)
-        self.accelerate(self.tämänhetkinen_nopeus, 70)
-        self.accelerate(self.tämänhetkinen_nopeus, 50)
 
-        self.drive(self.kuljettu_matka, 2)
+        self.drive(1.5)
 
-        return f"Km travelled: {self.kuljettu_matka}"
+        return f"Distance travelled: {self.kuljettu_matka:.0f} km"
 
-auto = Auto("ABC123", "142 km/h")
+auto = Auto("ABC123", "142 km/h", 60, 2000)
 print(auto.main())
