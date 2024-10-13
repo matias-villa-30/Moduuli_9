@@ -25,7 +25,7 @@ class Auto():
         self.accelerate(self.tämänhetkinen_nopeus, 50)
         print(f"Current speed is: {self.tämänhetkinen_nopeus} km/h")
         self.accelerate(self.tämänhetkinen_nopeus, -200)
-        return self.rekisteritunnus, self.huippunopeus, self.tämänhetkinen_nopeus, self.kuljettu_matka
+        return f"Final speed is {self.tämänhetkinen_nopeus} km/h"
 
 auto = Auto("ABC123", "142 km/h")
 print(auto.main())
