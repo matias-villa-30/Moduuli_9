@@ -1,4 +1,4 @@
-class Auto():
+class Auto:
     def __init__(self, rekisteritunnus, huippunopeus, tämänhetkinen_nopeus, kuljettu_matka):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
